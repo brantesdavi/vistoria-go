@@ -1,0 +1,7 @@
+{
+  "name": "vistoria-go",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
