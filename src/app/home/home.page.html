@@ -1,17 +1,62 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Cadastro de Vistoriador</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-content>
+<ion-content>
+  <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
     <ion-item>
       <ion-label position="floating">Nome</ion-label>
-      <ion-input type="text" [(ngModel)]="nome" required></ion-input>
+      <ion-input formControlName="nome"></ion-input>
     </ion-item>
-    <ion-button expand="block" (click)="cadastrar()">Cadastrar</ion-button>
-  </ion-content>
+
+    <ion-item>
+      <ion-label position="floating">CPF</ion-label>
+      <ion-input formControlName="cpf" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">RG</ion-label>
+      <ion-input formControlName="rg" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input formControlName="telefone" type="tel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Endereço</ion-label>
+      <ion-input formControlName="endereco" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">CNH</ion-label>
+      <ion-input formControlName="cnh" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Login</ion-label>
+      <ion-input formControlName="login" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input formControlName="senha" type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Selfie com Documento</ion-label>
+      <ion-button (click)="takePicture()">Tirar Foto</ion-button>
+    </ion-item>
+
+    <img *ngIf="photo" [src]="photo.webPath" />
+
+    <ion-button expand="block" type="submit" [disabled]="!cadastroForm.valid">Cadastrar</ion-button>
+  </form>
+
+  <ion-button expand="block" (click)="exibirDadosJSON()">Ver Dados em JSON</ion-button>
+
+  <pre *ngIf="dadosJSON">{{ dadosJSON }}</pre>
 </ion-content>
