@@ -13,17 +13,32 @@
 
     <ion-item>
       <ion-label position="floating">CPF</ion-label>
-      <ion-input formControlName="cpf" type="text"></ion-input>
+      <ion-input 
+        formControlName="cpf" 
+        type="text"
+        [maskito]="rgMask"
+        [maskitoElement]="maskPredicate"
+      ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">RG</ion-label>
-      <ion-input formControlName="rg" type="text"></ion-input>
+      <ion-input 
+        formControlName="rg" 
+        type="text"
+        [maskito]="cpfMask"
+        [maskitoElement]="maskPredicate"
+        ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Telefone</ion-label>
-      <ion-input formControlName="telefone" type="tel"></ion-input>
+      <ion-input 
+        formControlName="telefone" 
+        type="tel"
+        [maskito]="telefoneMask"
+        [maskitoElement]="maskPredicate"
+      ></ion-input>
     </ion-item>
 
     <ion-item>
@@ -33,7 +48,12 @@
 
     <ion-item>
       <ion-label position="floating">CNH</ion-label>
-      <ion-input formControlName="cnh" type="text"></ion-input>
+      <ion-input 
+        formControlName="cnh" 
+        type="text"
+        [maskito]="cnhMask"
+        [maskitoElement]="maskPredicate"
+      ></ion-input>
     </ion-item>
 
     <ion-item>
