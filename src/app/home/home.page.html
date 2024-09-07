@@ -16,7 +16,7 @@
       <ion-input 
         formControlName="cpf" 
         type="text"
-        [maskito]="rgMask"
+        [maskito]="cpfMask"
         [maskitoElement]="maskPredicate"
       ></ion-input>
     </ion-item>
@@ -26,9 +26,9 @@
       <ion-input 
         formControlName="rg" 
         type="text"
-        [maskito]="cpfMask"
+        [maskito]="rgMask"
         [maskitoElement]="maskPredicate"
-        ></ion-input>
+      ></ion-input>
     </ion-item>
 
     <ion-item>
@@ -71,7 +71,7 @@
       <ion-button (click)="takePicture()">Tirar Foto</ion-button>
     </ion-item>
 
-    <img *ngIf="photo" [src]="photo.webPath" />
+    <img *ngIf="photo" [src]="photo.dataUrl" />
 
     <ion-button expand="block" type="submit" [disabled]="!cadastroForm.valid">Cadastrar</ion-button>
   </form>
